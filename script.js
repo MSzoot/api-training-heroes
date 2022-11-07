@@ -10,7 +10,8 @@ const getSuperHero = (id) => {
     fetch(`https://www.superheroapi.com/api.php/3393642127590680/${id}`)
     .then(response => response.json())
     .then(json => { 
-        document.querySelector("section").innerHTML = `<img src="${json.image.url}" class="h-96 w-96"/>`
+        const name = `<h2 class= "text-6xl mb-10 ">${json.name}</h2>`
+        document.querySelector("section").innerHTML = `${name}<img src="${json.image.url}" class="h-96 w-96 mx-auto"/>`
          
      })
 } 
